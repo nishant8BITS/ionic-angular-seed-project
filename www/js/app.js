@@ -72,7 +72,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'user'])
     url : '/login',
     templateUrl : 'templates/login.html',
     controller: 'LoginCtrl'
+  })
+  .state('signup', {
+    url : '/signup',
+    templateUrl : 'templates/signup.html',
+    controller: 'SignUpCtrl'
+  })
+  .state('home', {
+    url : '/home',
+    templateUrl : 'templates/home.html',
+    controller: 'HomeCtrl'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/home');
 });
