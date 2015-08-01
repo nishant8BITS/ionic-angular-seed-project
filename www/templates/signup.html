@@ -1,23 +1,29 @@
-<ion-content>
-    <div class="row margin-left5">
-        <div class="col-90">
-            <div class="list">
-                <label class="item item-input item-stacked-label">
-                    <input type="text" placeholder="Email Address">
-                </label>
-                <label class="item item-input item-stacked-label">
-                    <input type="password" placeholder="Password">
-                </label>
-                <label class="item item-input item-stacked-label">
-                    <input type="text" placeholder="First Name">
-                </label>
-                <label class="item item-input item-stacked-label">
-                    <input type="text" placeholder="Last Name">
-                </label>
-            </div>
-            <button class="button button-block button-assertive">
-                Sign Up
-            </button>
-        </div>
-    </div>
-</ion-content>
+<ion-view view-title="SignUp">
+  <ion-content>
+      <div class="row margin-left5">
+          <div class="col-90">
+          <form name="signUpForm" novalidate="" ng-submit="vm.signup(signUpForm)">
+              <div class="list">
+                  <label class="item item-input item-stacked-label">
+                      <input type="text" name="emailAdd" ng-model="user.email"placeholder="Email Address" required>
+                  </label>
+                  <label class="item item-input item-stacked-label">
+                      <input type="password" name="password" ng-model="user.password"placeholder="Password" required>
+                  </label>
+                  <label class="item item-input item-stacked-label">
+                      <input type="text" name="firstName" ng-model="user.firstName" placeholder="First Name" required>
+                  </label>
+                  <label class="item item-input item-stacked-label">
+                      <input type="text" name="lastName" ng-model="user.lastName" placeholder="Last Name" required>
+                  </label>
+              </div>
+              <button class="button button-block button-assertive" 
+                      type="submit" 
+                      ng-disabled="!signUpForm.$valid" >
+                  Sign Up
+              </button>
+            </form>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
