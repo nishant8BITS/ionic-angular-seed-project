@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'user'])
+angular.module('starter', ['ionic', 'starter.controllers','core','user'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -71,18 +71,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'user'])
   .state('login', {
     url : '/login',
     templateUrl : 'templates/login.html',
-    controller: 'LoginCtrl'
+    controller: 'LoginCtrl as vm'
   })
   .state('signup', {
     url : '/signup',
     templateUrl : 'templates/signup.html',
-    controller: 'SignUpCtrl'
+    controller: 'SignUpCtrl as vm'
   })
   .state('home', {
     url : '/home',
     templateUrl : 'templates/home.html',
     controller: 'HomeCtrl'
+  })
+  .state('resetPassword', {
+    url : '/reset-password',
+    templateUrl : 'templates/reset-password.html',
+    controller: 'ResetPwdCtrl as vm'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/reset-password');
 });

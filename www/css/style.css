@@ -1,8 +1,46 @@
 /* Empty. Add your own CSS if you like */
 
+/*
+  Global CSS
+ */
+
+a{
+	text-decoration: none;
+} 
+
 /* Signup Page CSS Start*/
 .margin-left5{
   margin-left: 5%;
 }
 
 /* Signup Page CSS End*/
+
+/*
+  Login Page CSS Start
+ */
+
+.linkFgtPwd{
+	color: #7c7d81;
+	float: left;
+	margin-left: -6px;
+}
+
+.linkSignUp{
+	color: #7c7d81;
+	float: right;
+	text-align: right;
+	margin-left: 12px;
+}
+
+/*
+ Login page css end
+ */
+.email-message{
+	text-align: center;
+	padding 10px;
+	color: #6C6C7D;
+	margin-bottom: 15px;
+}
+
+
+

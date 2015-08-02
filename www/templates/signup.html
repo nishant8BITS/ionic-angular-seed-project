@@ -2,7 +2,7 @@
   <ion-content>
       <div class="row margin-left5">
           <div class="col-90">
-          <form name="signUpForm" novalidate="" ng-submit="vm.signup(signUpForm)">
+          <form name="signUpForm" novalidate="">
               <div class="list">
                   <label class="item item-input item-stacked-label">
                       <input type="text" name="emailAdd" ng-model="user.email"placeholder="Email Address" required>
@@ -19,7 +19,8 @@
               </div>
               <button class="button button-block button-assertive" 
                       type="submit" 
-                      ng-disabled="!signUpForm.$valid" >
+                      ng-disabled="!signUpForm.$valid"
+                      ng-click="vm.signup(signUpForm)">
                   Sign Up
               </button>
             </form>
