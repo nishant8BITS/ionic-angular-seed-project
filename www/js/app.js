@@ -20,6 +20,21 @@ angular.module('starter', ['ionic', 'starter.controllers','core','user'])
       StatusBar.styleDefault();
     }
   });
+
+   // $rootScope.$on('$stateChangeStart', function (event, next, current) {
+   //      var userInfo = $cookieStore.get('userInfo');
+   //      if (!userInfo) {
+   //          // user not logged in | redirect to login
+   //          if (next.name !== "welcome") {
+   //              // not going to #welcome, we should redirect now
+   //              event.preventDefault();
+   //              //$state.go('welcome');
+   //          }
+   //      } else {
+   //          event.preventDefault();
+   //          $state.go('dashboard');
+   //      }
+   //  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -87,7 +102,12 @@ angular.module('starter', ['ionic', 'starter.controllers','core','user'])
     url : '/reset-password',
     templateUrl : 'templates/reset-password.html',
     controller: 'ResetPwdCtrl as vm'
+  })
+  .state('dashboard', {
+    url : '/dashboard',
+    templateUrl : 'templates/dashboard.html',
+    controller: 'DashBoardCtrl as vm'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/reset-password');
+  $urlRouterProvider.otherwise('/dashboard');
 });

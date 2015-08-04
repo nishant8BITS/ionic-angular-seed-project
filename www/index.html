@@ -28,6 +28,43 @@
     <script src="js/Login/login.controller.js"></script>
     <script src="js/Login/signup.controller.js"></script>
     <script src="js/Login/reset-password.controller.js"></script>
+    <script src="js/Login/dashboard.controller.js"></script>
+ 
+    <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '527329897424473',
+              xfbml      : true,
+              version    : 'v2.4'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/en_US/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+
+          // Google OAuth Init
+            (function () {
+                var po = document.createElement('script');
+                po.type = 'text/javascript';
+                po.async = true;
+                po.src = 'https://apis.google.com/js/client.js?onload=onLoadCallback';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(po, s);
+            })();
+ 
+            function onLoadCallback() {
+                // Replace the API key with yours
+                gapi.client.setApiKey('AIzaSyC5JgBIrjOGKDAIZLcsVHvgkjjGkkrZTqk');
+                gapi.client.load('plus', 'v1', function () {
+                });
+            }
+            // Google Oauth Init - END
+    </script> 
     
   </head>
 
