@@ -5,10 +5,10 @@
         .module('user')
         .controller('DashBoardCtrl', DashBoardCtrl);
 
-    DashBoardCtrl.$inject = ['$scope', '$cookieStore'];
+    DashBoardCtrl.$inject = ['$scope'];
 
     /* @ngInject */
-    function DashBoardCtrl($scope, $cookieStore) {
+    function DashBoardCtrl($scope) {
         var vm = this;
 
 	    /**
@@ -45,9 +45,9 @@
 	                        user.gender = '';
 	                    }
 	                    user.profilePic = picResponse.data.url;
-	                    $cookieStore.put('userInfo', user);
-	                    cosnoloe.log(user.name);
-	                    cosnoloe.log(user.email);
+	                    //$cookieStore.put('userInfo', user);
+	                    console.log(user.name);
+	                    console.log("Email" + user.email);
 	                    //$state.go('dashboard');
 	 
 	                });
