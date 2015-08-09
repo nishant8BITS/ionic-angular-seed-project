@@ -1,0 +1,90 @@
+<ion-view view-title="Buy Property">
+    <ion-content>
+        <div class="row">
+          <div class="fullWidth">
+            <form name="hotelsQuotes" novalidate="">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                       <google-places location=vm.location place=vm.place
+                       placeholder="Locality"
+                       name="propertQuotes"></google-places>
+                    </label>
+
+                    <div class="row">
+                        <div class="col haveBudget">Have Budget</div>
+                        <div class="col textAlignRight">
+                            <label class="toggle toggle-positive">
+                                <input type="checkbox" ng-model="vm.budgetCheked">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <rzslider ng-show="vm.budgetCheked"
+                        rz-slider-floor="priceSlider.floor"
+                        rz-slider-ceil="priceSlider.ceil"
+                        rz-slider-model="priceSlider.min"
+                        rz-slider-high="priceSlider.max"
+                        rz-slider-translate="translate">
+                    </rzslider>
+
+                <label class="item item-input item-select">
+                  <div class="input-label">
+                    <i class="icon ion-ios-home"></i>
+                    BHK
+                  </div>
+                  <select>
+                    <option selected>1 BHK</option>
+                    <option>2 BHK</option>
+                    <option>3 BHK</option>
+                    <option>3+ BHK</option>
+                  </select>
+                </label>
+                <label class="item item-input item-select">
+                  <div class="input-label">
+                    <i class="icon ion-ios-home"></i>
+                    Status
+                  </div>
+                  <select>
+                    <option selected>Under Construction</option>
+                    <option>Ready to Move</option>
+                  </select>
+                </label>
+                <label class="item item-input item-select">
+                  <div class="input-label">
+                    <i class="icon ion-ios-home"></i>
+                    Type
+                  </div>
+                  <select>
+                    <option selected>Apartment</option>
+                    <option>Independent House / Villa</option>
+                    <option>Builder Floor</option>
+                    <option>Studio</option>
+                    <option>Duplex</option>
+                    <option>Penthouse</option>
+                    <option>Row House</option>
+                  </select>
+                </label>
+                <label class="item item-input item-select">
+                  <div class="input-label">
+                    <i class="icon ion-clock"></i>
+                    Possession
+                  </div>
+                  <select>
+                    <option selected>In 1 Year</option>
+                    <option>In 2 Year</option>
+                    <option>In 3 Year</option>
+                    <option>In 3+ Year</option>
+                  </select>
+                </label>
+                </div>
+                <button class="button button-block button-assertive" type="button" ng-disabled="!hotelsQuotes.$valid" ng-click="vm.doLogin(logInForm)">
+                    Get Quotes
+                </button>
+            </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','hotels','user'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','hotels','user','ionic-datepicker', 'locationSearch', 'rzModule', 'service'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -112,7 +112,16 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','h
     url : '/getQuotes',
     templateUrl : 'templates/Hotels/hotels.getQuotes.html',
     controller: 'HotelsQuotesCtrl as vm'
+  })
+  .state('servicePost', {
+    url : '/servicePost',
+    templateUrl : 'templates/Hotels/hotels.getQuotes.html',
+    controller: 'HotelsQuotesCtrl as vm'
+  }).state('buyProperty', {
+    url : '/buyProperty',
+    templateUrl : 'templates/buy-property.html',
+    controller: 'BuyPropertyCtlr as vm'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/getQuotes');
+  $urlRouterProvider.otherwise('/buyProperty');
 });

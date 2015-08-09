@@ -1,5 +1,68 @@
-<ion-view view-title="Get Quotes">
-	<ion-content has-subheader="false">
-	<label type="text" ng-model="user.birthday" ng-click="showDatePicker1()">mm/dd/yyyy</label>
-	</ion-content>
+<ion-view view-title="Hotels Quotes">
+    <ion-content>
+        <div class="row">
+          <div class="fullWidth">
+            <form name="hotelsQuotes" novalidate="">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                       <google-places location=vm.location place=vm.place
+                       placeholder="Enter City, Areas, Locality of Hotels"
+                       name="hotelLocation"></google-places>
+                    </label>
+                    <ionic-datepicker idate="currentDate" disablepreviousdates="  true" disablefuturedates="false" callback="
+                    vm.checkIndatePickerCallback" disableddates="disabledDates" title="'CheckIn Date'" mondayfirst="true">
+                        <button class="button button-block button-positive"> CheckIn Date {{ vm.checkInDate | date:'dd - MMMM - yyyy' }} </button>
+                    </ionic-datepicker>
+                    <ionic-datepicker idate="currentDate" disablepreviousdates="  true" disablefuturedates="false" callback="vm.checkOutdatePickerCallback" disableddates="disabledDates" title="'CheckOut Date'" mondayfirst="true">
+                        <button class="button button-block button-positive"> 
+                        CheckOut Date {{vm.checkOutDate | date:'dd - MMMM - yyyy' }} </button>
+                    </ionic-datepicker>
+                      
+                    <div class="row">
+                        <div class="col haveBudget">Have Budget</div>
+                        <div class="col textAlignRight">
+                            <label class="toggle toggle-positive">
+                                <input type="checkbox" ng-model="vm.budgetCheked">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <rzslider ng-show="vm.budgetCheked"
+                        rz-slider-floor="priceSlider.floor"
+                        rz-slider-ceil="priceSlider.ceil"
+                        rz-slider-model="priceSlider.min"
+                        rz-slider-high="priceSlider.max"
+                        rz-slider-translate="translate">
+                    </rzslider>
+                      <div class="item row" ng-repeat="(key, value) in vm.roomsBookingInfo">
+                        <div class="col col-50">
+                          <div>Room{{key}}</div>
+                          <div><span>{{value.adults}} Adult,</span><span> {{value.child}} Child</span></div>
+                        </div>
+                        <div class="col"><i class="icon ion-man"></i>
+                        <span></span><span>{{value.adults}}</span></div>
+                        <div class="col"><i class="icon ion-man"></i>
+                        <span></span><span>{{value.child}}</span></div>
+                      </div>
+
+                      <button class="button button-full button-light"
+                      ng-click="vm.addRoom()" ng-hide="vm.roomsBookingInfo.length>1">
+                        ADD ROOM
+                      </button>
+                      <div class="button-bar" ng-show="vm.roomsBookingInfo.length>1">
+                        <a class="button button-light" ng-click="vm.removeRoom()">REMOVE ROOM</a>
+                        <a class="button button-light" ng-click="vm.addRoom()">ADD ROOM</a>
+                      </div>
+
+                </div>
+                <button class="button button-block button-assertive" type="button" ng-disabled="!hotelsQuotes.$valid" ng-click="vm.doLogin(logInForm)">
+                    Get Quotes
+                </button>
+            </form>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

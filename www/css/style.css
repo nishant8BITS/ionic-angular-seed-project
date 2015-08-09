@@ -42,6 +42,21 @@ a{
 	margin-bottom: 15px;
 }
 
+/*
+  Hotel Get quotes CSS Start
+ */
+.fullWidth{
+	width: 100%;
+}
+
+.haveBudget {
+	text-align: left;
+	padding:10px;
+
+}
+.textAlignRight{
+	text-align: right;
+}
 
 
 
