@@ -123,5 +123,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','h
     controller: 'BuyPropertyCtlr as vm'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/buyProperty');
+  $urlRouterProvider.otherwise('/home');
 });
