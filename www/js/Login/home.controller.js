@@ -1,4 +1,14 @@
-angular.module('user', []).
- 	controller('HomeCtrl', ['$scope', function($scope){
- 		
- 	}]);
+(function() {
+    'use strict';
+
+    angular
+        .module('user',[])
+        .controller('HomeCtrl', HomeCtrl);
+
+    HomeCtrl.$inject = ['$scope'];
+
+    /* @ngInject */
+    function HomeCtrl($scope) {
+        var vm = this;
+    }
+})();

@@ -118,4 +118,12 @@ a{
     margin-bottom: 20px;
 }
 
+/*
+  This is important for making bottom header
+ */
+.hasBottom{
+	bottom:44px;
+	top: 34px;
+}
+
 

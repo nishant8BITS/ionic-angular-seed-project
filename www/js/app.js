@@ -46,14 +46,23 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','h
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-
-  .state('app.search', {
-    url: '/search',
+  .state('app.tabs', {
+    url: '/tabs',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/tabs.html'
       }
     }
+  })
+
+  .state('app.tabs.home', {
+    url: '/home',
+    views: {
+      'mainContent': {
+        templateUrl: 'templates/home.html'
+      }
+    },
+    controller : 'HomeCtrl as vm'
   })
 
   .state('app.browse', {
@@ -93,11 +102,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','h
     templateUrl : 'templates/signup.html',
     controller: 'SignUpCtrl as vm'
   })
-  .state('home', {
-    url : '/home',
-    templateUrl : 'templates/home.html',
-    controller: 'HomeCtrl'
-  })
   .state('resetPassword', {
     url : '/reset-password',
     templateUrl : 'templates/reset-password.html',
@@ -123,5 +127,5 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','core','h
     controller: 'BuyPropertyCtlr as vm'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/app/tabs/home');
 });
